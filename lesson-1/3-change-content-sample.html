@@ -1,0 +1,19 @@
+<html>
+    <head> 
+        <title>JavaScript course - changing content sample</title> 
+    </head>
+
+    <body>
+        <h1>Web Software Development</h1>
+        <input type="button" value="click here" onclick="changeContent()"/>
+
+    </body>
+
+    <script>
+        function changeContent(){
+            var h1 = document.querySelector('h1');
+            h1.textContent = 'Resuming the subject of web software development';
+        }
+    </script>
+
+</html>
