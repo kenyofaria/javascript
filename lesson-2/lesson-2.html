@@ -1,0 +1,69 @@
+<html>
+    <body>
+        <input type="text" id="operandA" width="200px"/>
+        <input type="text" id="operandB" width="200px"/>
+        <input type="button" id="btnAdd" width="200px" value="+" onclick="doAdd()"/>
+        <input type="button" id="btnSub" width="200px" value="-" onclick="doSub()"/>
+        <input type="button" id="btnProd" width="200px" value="x" onclick="doProd()"/>
+        <input type="button" id="btnDiv" width="200px" value="/" onclick="doDiv()"/>
+        <div id="divResult"></div>
+        <input type="button" id="btnLog" width="200px" value="Log" onclick="logOperations()"/>
+    </body>
+    <script>
+
+        var operations = new Array();
+
+        function doAdd(){
+            var opA = document.querySelector('#operandA').value;
+            var opB = document.querySelector('#operandB').value;
+            var divResult = document.querySelector('#divResult');
+            if(opA && opB){
+                var result = parseFloat(opA) + parseFloat(opB);
+                showResult(result);
+                operations.push(opA +  ' + ' + opB + ' = ' + result);
+                
+            }
+        }
+        function doSub(){
+            var opA = document.querySelector('#operandA').value;
+            var opB = document.querySelector('#operandB').value;
+            var divResult = document.querySelector('#divResult');
+            if(opA && opB){
+                var result = parseFloat(opA) - parseFloat(opB);
+                showResult(result);
+                operations.push(opA +  ' - ' + opB + ' = ' + result);
+            }
+        }
+        function doProd(){
+            var opA = document.querySelector('#operandA').value;
+            var opB = document.querySelector('#operandB').value;
+            var divResult = document.querySelector('#divResult');
+            if(opA && opB){
+                var result = parseFloat(opA) * parseFloat(opB);
+                showResult(result);
+                operations.push(opA +  ' x ' + opB + ' = ' + result);
+            }
+        }
+        function doDiv(){
+            var opA = document.querySelector('#operandA').value;
+            var opB = document.querySelector('#operandB').value;
+            var divResult = document.querySelector('#divResult');
+            if(opA && opB){
+                var result = parseFloat(opA) / parseFloat(opB);
+                showResult(result);
+                operations.push(opA +  ' / ' + opB + ' = ' + result);
+            }
+        }
+
+        function showResult(result){
+            divResult.textContent = result.toFixed(1);
+        }
+
+        function logOperations(){
+            for(var i=0;i<operations.length;i++){
+                console.log(operations[i]);
+            }
+        }
+
+    </script>
+</html>
